@@ -1,26 +1,73 @@
-import ReactPlayer from "react-player"
-import { videos } from "../backend/db/videos"
+import ReactPlayer from "react-player";
+import { videos } from "../backend/db/videos";
 import { FaClock } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
+import { useData } from "../context/DataContext";
 
-const SingleVideo = ({id}) => {
-  const video = videos.find((video) => video._id === id)
+const SingleVideo = ({ id }) => {
+  const {
+    likeState: { like },
+    likeDispatch,
+    watchlaterState: { watchlater },
+    watchlaterDispatch,
+  } = useData();
+  const video = videos.find((video) => video._id === id);
 
   return (
-    <div className="p-2 md:p-10 lg:mx-[13.6rem]">
-      <ReactPlayer className="min-h-0 md:min-h-[100%] lg:min-h-[65vh]" width="100%" url={`https://www.youtube.com/watch?v=${video?._id}`} controls={true} />
+    <div className="p-2 md:p-10 lg:ml-[13.6rem] xl:mx-[13.6rem]">
+      <ReactPlayer
+        className="min-h-0 md:min-h-[50vh] xl:min-h-[65vh]"
+        width="100%"
+        url={`https://www.youtube.com/watch?v=${video?._id}`}
+        controls={true}
+      />
       <div className="py-4">
-        <h2 className="text-xl lg:text-2xl font-semibold py-2">{video?.title}</h2>
-        <p className="text-gray-200 text-lg">{video?.creator}</p>
-        <div className="flex gap-4 my-2">
-          <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer"><BiLike />Like</span>
-          <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer"><FaClock />Watch Later</span>
+        <h2 className="text-lg md:text-xl lg:text-2xl font-semibold py-2">
+          {video?.title}
+        </h2>
+        <p className="text-md md:text-xl text-gray-200 ">{video?.creator}</p>
+        <div className="flex gap-4 my-4">
+          <span
+            onClick={() => {
+              likeDispatch({
+                type: "Add-to-like",
+                payload: video,
+              });
+            }}
+            className={`${
+              like.find((item) => item._id === video._id)
+                ? "bg-red-700 hover:bg-red-800"
+                : ""
+            } flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer`}
+          >
+            <BiLike />
+            {like.find((item) => item._id === video._id) ? "Liked" : "Like"}
+          </span>
+          <span
+            onClick={() => {
+              watchlaterDispatch({
+                type: "Add-to-watchlater",
+                payload: video,
+              });
+            }}
+            className={`${
+              watchlater.find((item) => item._id === video._id)
+                ? "bg-red-700 hover:bg-red-800"
+                : ""
+            } flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer`}
+          >
+            <FaClock />
+            Watch Later
+          </span>
         </div>
-        <p className="text-lg font-medium py-2">Description :</p>
-        <p className="text-base py-2">{video?.description}</p>
+        <hr className="border-none my-4 p-[0.1px] bg-stone-700" />
+        <p className="text-md md:text-lg lg:text-xl font-medium">
+          Description :
+        </p>
+        <p className="text-md md:text-lg py-4">{video?.description}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SingleVideo
+export default SingleVideo;

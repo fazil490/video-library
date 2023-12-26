@@ -4,6 +4,7 @@ import { FiSearch } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useSidebar } from "../context/sidebarContext";
+import { Link } from "react-router-dom";
 
 const MobileNavbar = () => {
   const [searchOn, setSearchOn] = useState(false);
@@ -22,7 +23,7 @@ const MobileNavbar = () => {
         <div className="bg-darkbg border-b border-b-stone-800 flex p-4 md:px-8 items-center justify-center gap-4">
           <button
             onClick={handleCloseSearch}
-            className="text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
+            className="text-white p-2 rounded-full hover:bg-stone-700"
           >
             <IoChevronBack />
           </button>
@@ -32,7 +33,7 @@ const MobileNavbar = () => {
             type="text"
             className="text-stone-400 rounded-full bg-darkbg border border-stone-700 focus:outline-none focus:border-red-900 px-4"
           />
-          <button className="text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20">
+          <button className="text-white p-2 rounded-full hover:bg-stone-700">
             <FiSearch />
           </button>
         </div>
@@ -46,13 +47,13 @@ const MobileNavbar = () => {
               <RxHamburgerMenu />
             </button>
             <h1 className="text-white text-xl sm:text-2xl font-semibold">
-              YouTube
+            <Link to="/">YouTube</Link>
             </h1>
           </div>
           <div className="flex items-center justify-between gap-4">
             <button
               onClick={handleSearchBar}
-              className="text-white p-2 ml-2 rounded-full hover:bg-white hover:bg-opacity-20"
+              className="text-white p-2 ml-2 rounded-full hover:bg-stone-700"
             >
               <FiSearch />
             </button>
