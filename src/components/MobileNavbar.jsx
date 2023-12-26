@@ -1,6 +1,7 @@
 import { IoChevronBack } from "react-icons/io5";
 import { useContext, useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import { FaPlay } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
@@ -46,7 +47,7 @@ const MobileNavbar = () => {
               <RxHamburgerMenu />
             </button>
             <h1 className="text-white text-xl sm:text-2xl font-semibold">
-              <Link to="/">YouTube</Link>
+              <Link className="text-red-700" to="/"><FaPlay /></Link>
             </h1>
           </div>
           <div className="flex items-center justify-between gap-4">

@@ -13,7 +13,7 @@ const Sidebar = () => {
         sidebar ? "left-0" : "-left-80"
       } transition-all duration-500 ease-in-out z-10 lg:left-0 bg-darkbg h-[100vh] fixed  border-r border-r-stone-800`}
     >
-      <div className="text-white text-sm sm:text-md md:text-lg">
+      <div className="text-white text-md md:text-lg">
         <Link
           to="/"
           className={`flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
