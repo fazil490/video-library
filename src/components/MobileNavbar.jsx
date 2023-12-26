@@ -3,19 +3,18 @@ import { useContext, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useSidebar } from "../context/sidebarContext";
 import { Link } from "react-router-dom";
+import { useData } from "../context/DataContext";
 
 const MobileNavbar = () => {
   const [searchOn, setSearchOn] = useState(false);
-  const {toggleSidebar} = useSidebar();
+  const { toggleSidebar } = useData();
   const handleSearchBar = () => {
     setSearchOn(true);
   };
   const handleCloseSearch = () => {
     setSearchOn(false);
   };
-
 
   return (
     <div className="sticky top-0">
@@ -41,13 +40,13 @@ const MobileNavbar = () => {
         <div className="bg-darkbg border-b border-b-stone-800 flex p-4 md:px-8 items-center justify-between">
           <div className="flex items-center justify-between">
             <button
-            onClick={toggleSidebar}
+              onClick={toggleSidebar}
               className="mr-4 text-white text-2xl"
             >
               <RxHamburgerMenu />
             </button>
             <h1 className="text-white text-xl sm:text-2xl font-semibold">
-            <Link to="/">YouTube</Link>
+              <Link to="/">YouTube</Link>
             </h1>
           </div>
           <div className="flex items-center justify-between gap-4">

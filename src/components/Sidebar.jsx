@@ -3,13 +3,15 @@ import { FaHeart } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useSidebar } from "../context/sidebarContext";
+import { useData } from "../context/DataContext";
 
 const Sidebar = () => {
-  const {isSidebarOpen} = useSidebar();
+  const { sidebar } = useData();
   return (
     <aside
-      className={`${isSidebarOpen ? 'left-0' : '-left-80'} transition-all duration-500 ease-in-out z-10 lg:left-0 bg-darkbg h-[100vh] fixed  border-r border-r-stone-800`}
+      className={`${
+        sidebar ? "left-0" : "-left-80"
+      } transition-all duration-500 ease-in-out z-10 lg:left-0 bg-darkbg h-[100vh] fixed  border-r border-r-stone-800`}
     >
       <div className="text-white text-sm sm:text-md md:text-lg">
         <Link
