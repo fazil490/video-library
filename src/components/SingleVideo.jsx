@@ -2,6 +2,7 @@ import ReactPlayer from "react-player";
 import { videos } from "../backend/db/videos";
 import { FaClock } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
+import { TiTick } from "react-icons/ti";
 import { useData } from "../context/DataContext";
 
 const SingleVideo = ({ id }) => {
@@ -54,7 +55,12 @@ const SingleVideo = ({ id }) => {
               "bg-white text-black hover:bg-white"
             } flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer`}
           >
-            <FaClock />
+            {" "}
+            {watchlater.find((item) => item._id === video._id) ? (
+              <TiTick />
+            ) : (
+              <FaClock />
+            )}
             Watch Later
           </span>
         </div>
