@@ -2,11 +2,13 @@ import { FaHome } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useData } from "../context/DataContext";
 
 const Sidebar = () => {
   const { sidebar } = useData();
+  const location = useLocation();
+
   return (
     <aside
       className={`${
@@ -14,30 +16,30 @@ const Sidebar = () => {
       } transition-all duration-500 ease-in-out z-10 lg:left-0 bg-darkbg h-[100vh] fixed  border-r border-r-stone-800`}
     >
       <div className="text-white text-md md:text-lg">
-        <Link
+        <NavLink
           to="/"
-          className={`flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
+          className={`${location.pathname === "/" && 'bg-stone-500 hover:bg-stone-500'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
         >
           <FaHome /> Home
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/liked"
-          className={`flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
+          className={`${location.pathname === "/liked" && 'bg-stone-500 hover:bg-stone-500'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
         >
           <FaHeart /> Liked
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/watchlater"
-          className={`flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
+          className={`${location.pathname === "/watchlater" && 'bg-stone-500 hover:bg-stone-500'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
         >
           <FaClock /> Watch Later
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/history"
-          className={`flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
+          className={`${location.pathname === "/history" && 'bg-stone-500 hover:bg-stone-500'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4 hover:bg-stone-800`}
         >
           <FaHistory /> History
-        </Link>
+        </NavLink>
       </div>
     </aside>
   );
