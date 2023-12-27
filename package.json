@@ -28,6 +28,5 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
     "vite": "^5.0.8"
-  },
-  "homepage": "https://video-library-five.vercel.app/"
+  }
 }
