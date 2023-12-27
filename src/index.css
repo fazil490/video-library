@@ -11,3 +11,7 @@
 body {
     background-color: #18181b;
 }
+
+.chip-active {
+    background-color: #b91c1c;
+}
