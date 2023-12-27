@@ -30,7 +30,7 @@ const WatchLater = () => {
             </h2>
             {watchlater.length === 0 && (
               <p className="text-lg">
-                Looks like you haven't liked anything yet.
+                Looks like you haven't added anything yet in Watch Later.
               </p>
             )}
           </div>

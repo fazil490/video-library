@@ -14,7 +14,6 @@ const VideoCard = ({ video }) => {
           type: "Add-to-history",
           payload: video,
         })
-        console.log(history);
       }} className="w-[23rem] sm:w-[20rem] lg:w-[20rem] xl:w-[22.1rem] rounded-lg shadow-lg">
         <img
           className="w-[100%] object-cover h-[12.5rem] rounded-t-lg"

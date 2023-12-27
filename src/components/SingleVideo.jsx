@@ -35,9 +35,8 @@ const SingleVideo = ({ id }) => {
               });
             }}
             className={`${
-              like.find((item) => item._id === video._id)
-                ? "bg-red-700 hover:bg-red-800"
-                : ""
+              like.find((item) => item._id === video._id) &&
+              "bg-white text-black hover:bg-white"
             } flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer`}
           >
             <BiLike />
@@ -51,9 +50,8 @@ const SingleVideo = ({ id }) => {
               });
             }}
             className={`${
-              watchlater.find((item) => item._id === video._id)
-                ? "bg-red-700 hover:bg-red-800"
-                : ""
+              watchlater.find((item) => item._id === video._id) &&
+              "bg-white text-black hover:bg-white"
             } flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 cursor-pointer`}
           >
             <FaClock />
