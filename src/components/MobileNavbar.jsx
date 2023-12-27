@@ -20,10 +20,10 @@ const MobileNavbar = () => {
   return (
     <div className="sticky top-0">
       {searchOn ? (
-        <div className="bg-darkbg border-b border-b-gray-800 flex p-4 md:px-8 items-center justify-center gap-4">
+        <div className="bg-darkbg border-b border-b-zinc-800 flex p-4 md:px-8 items-center justify-center gap-4">
           <button
             onClick={handleCloseSearch}
-            className="text-white p-2 rounded-full hover:bg-gray-700"
+            className="text-white p-2 rounded-full hover:bg-zinc-700"
           >
             <IoChevronBack />
           </button>
@@ -31,14 +31,14 @@ const MobileNavbar = () => {
             onChange={() => {}}
             placeholder="Search"
             type="text"
-            className="text-gray-400 rounded-full bg-darkbg border border-gray-700 focus:outline-none focus:border-red-900 px-4"
+            className="text-zinc-400 rounded-full bg-darkbg border border-zinc-700 focus:outline-none focus:border-red-900 px-4"
           />
-          <button className="text-white p-2 rounded-full hover:bg-gray-700">
+          <button className="text-white p-2 rounded-full hover:bg-zinc-700">
             <FiSearch />
           </button>
         </div>
       ) : (
-        <div className="bg-darkbg border-b border-b-gray-800 flex p-4 md:px-8 items-center justify-between">
+        <div className="bg-darkbg border-b border-b-zinc-800 flex p-4 md:px-8 items-center justify-between">
           <div className="flex items-center justify-between">
             <button
               onClick={toggleSidebar}
@@ -56,7 +56,7 @@ const MobileNavbar = () => {
           <div className="flex items-center justify-between gap-4">
             <button
               onClick={handleSearchBar}
-              className="text-white p-2 ml-2 rounded-full hover:bg-gray-700"
+              className="text-white p-2 ml-2 rounded-full hover:bg-zinc-700"
             >
               <FiSearch />
             </button>

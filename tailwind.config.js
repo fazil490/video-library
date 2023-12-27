@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        darkbg: "#030712",
+        darkbg: "#18181b",
       },
     },
   },

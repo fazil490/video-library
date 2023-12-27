@@ -27,7 +27,7 @@ const VideoCard = ({ video }) => {
             </h2>
             <FaEllipsisV />
           </div>
-          <div className="flex items-center justify-between text-gray-400">
+          <div className="flex items-center justify-between text-zinc-400">
             <p>{video?.creator}</p>
             <p>{video?.uploaded}</p>
           </div>

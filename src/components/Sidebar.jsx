@@ -13,30 +13,30 @@ const Sidebar = () => {
     <aside
       className={`${
         sidebar ? "left-0" : "-left-80"
-      } transition-all duration-500 ease-in-out z-10 lg:left-0 bg-darkbg h-[100vh] fixed  border-r border-r-gray-800`}
+      } transition-all duration-500 ease-in-out z-10 lg:left-0 bg-darkbg h-[100vh] fixed  border-r border-r-zinc-800`}
     >
       <div className="text-white text-md md:text-lg">
         <NavLink
           to="/"
-          className={`${location.pathname === "/" && 'bg-gray-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
+          className={`${location.pathname === "/" && 'bg-zinc-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
         >
           <FaHome /> Home
         </NavLink>
         <NavLink
           to="/liked"
-          className={`${location.pathname === "/liked" && 'bg-gray-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
+          className={`${location.pathname === "/liked" && 'bg-zinc-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
         >
           <FaHeart /> Liked
         </NavLink>
         <NavLink
           to="/watchlater"
-          className={`${location.pathname === "/watchlater" && 'bg-gray-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
+          className={`${location.pathname === "/watchlater" && 'bg-zinc-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
         >
           <FaClock /> Watch Later
         </NavLink>
         <NavLink
           to="/history"
-          className={`${location.pathname === "/history" && 'bg-gray-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
+          className={`${location.pathname === "/history" && 'bg-zinc-800'} flex items-center justify-start gap-4 md:gap-6 px-8 md:px-10 py-4`}
         >
           <FaHistory /> History
         </NavLink>

@@ -26,7 +26,7 @@ const SingleVideo = ({ id }) => {
         <h2 className="text-lg md:text-xl lg:text-2xl font-semibold py-2">
           {video?.title}
         </h2>
-        <p className="text-md md:text-xl text-gray-200 ">{video?.creator}</p>
+        <p className="text-md md:text-xl text-zinc-200 ">{video?.creator}</p>
         <div className="flex gap-4 my-4">
           <span
             onClick={() => {
@@ -38,7 +38,7 @@ const SingleVideo = ({ id }) => {
             className={`${
               like.find((item) => item._id === video._id) &&
               "bg-white text-black hover:bg-white"
-            } flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 cursor-pointer`}
+            } flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 cursor-pointer`}
           >
             <BiLike />
             {like.find((item) => item._id === video._id) ? "Liked" : "Like"}
@@ -53,7 +53,7 @@ const SingleVideo = ({ id }) => {
             className={`${
               watchlater.find((item) => item._id === video._id) &&
               "bg-white text-black hover:bg-white"
-            } flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 cursor-pointer`}
+            } flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 cursor-pointer`}
           >
             {" "}
             {watchlater.find((item) => item._id === video._id) ? (
@@ -64,7 +64,7 @@ const SingleVideo = ({ id }) => {
             Watch Later
           </span>
         </div>
-        <hr className="border-none my-4 p-[0.1px] bg-gray-700" />
+        <hr className="border-none my-4 p-[0.1px] bg-zinc-700" />
         <p className="text-md md:text-lg lg:text-xl font-medium">
           Description :
         </p>
