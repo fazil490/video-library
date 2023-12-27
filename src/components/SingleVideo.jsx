@@ -15,7 +15,7 @@ const SingleVideo = ({ id }) => {
   const video = videos.find((video) => video._id === id);
 
   return (
-    <div className="p-2 md:p-10 lg:ml-[13.6rem] xl:mx-[13.6rem]">
+    <div className="p-4 md:p-10 lg:ml-[13.6rem] xl:mx-[13.6rem]">
       <ReactPlayer
         className="min-h-0 md:min-h-[50vh] xl:min-h-[65vh]"
         width="100%"

@@ -47,7 +47,10 @@ const MobileNavbar = () => {
               <RxHamburgerMenu />
             </button>
             <h1 className="text-white text-xl sm:text-2xl font-semibold">
-              <Link className="text-red-700" to="/"><FaPlay /></Link>
+              <Link to="/" className="text-red-700 flex items-center gap-4">
+                <FaPlay />
+                <span className="text-white">FusionMedia</span>
+              </Link>
             </h1>
           </div>
           <div className="flex items-center justify-between gap-4">

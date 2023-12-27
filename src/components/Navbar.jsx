@@ -7,7 +7,10 @@ const Navbar = () => {
     <nav className="bg-darkbg border-b border-b-stone-800 flex p-4 md:px-8 items-center justify-between">
       <div className="flex items-center justify-between">
         <h1 className="text-white text-xl sm:text-2xl font-semibold">
-          <Link to="/" className="text-red-700"><FaPlay /></Link>
+          <Link to="/" className="text-red-700 flex items-center gap-4">
+            <FaPlay />
+            <span className="text-white">FusionMedia</span>
+          </Link>
         </h1>
       </div>
       <div className="flex items-center gap-2 w-[30%]">
