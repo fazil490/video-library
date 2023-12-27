@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-darkbg border-b border-b-stone-800 flex p-4 md:px-8 items-center justify-between">
+    <nav className="bg-darkbg border-b border-b-gray-800 flex p-4 md:px-8 items-center justify-between">
       <div className="flex items-center justify-between">
         <h1 className="text-white text-xl sm:text-2xl font-semibold">
           <Link to="/" className="text-red-700 flex items-center gap-4">
@@ -17,9 +17,9 @@ const Navbar = () => {
         <input
           placeholder="Search"
           type="text"
-          className="text-stone-400 rounded-full bg-darkbg border border-stone-700 focus:outline-none focus:border-red-900 px-4 py-1 w-[90%]"
+          className="text-gray-400 rounded-full bg-darkbg border border-gray-700 focus:outline-none focus:border-red-900 px-4 py-1 w-[90%]"
         />
-        <button className="text-white p-2 rounded-full bg-stone-700 hover:bg-stone-600">
+        <button className="text-white p-2 rounded-full bg-gray-700 hover:bg-gray-600">
           <FiSearch />
         </button>
       </div>

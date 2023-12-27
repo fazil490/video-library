@@ -39,7 +39,7 @@ const Home = () => {
                 onClick={(e) => {
                   categoryFilter(e.target.value);
                 }}
-                className="focus:bg-red-700 px-4 py-2 m-2 rounded-full cursor-pointer bg-stone-800 hover:bg-stone-700"
+                className="focus:bg-red-700 px-4 py-2 m-2 rounded-full cursor-pointer bg-gray-800 hover:bg-gray-700"
               >
                 {category}
               </button>
