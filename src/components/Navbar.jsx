@@ -1,8 +1,10 @@
 import { FiSearch } from "react-icons/fi";
 import { FaPlay, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useData } from "../context/DataContext";
 
 const Navbar = () => {
+  const { handleSearchInputChange, performSearch } = useData();
   return (
     <nav className="bg-darkbg border-b border-b-zinc-800 flex p-4 md:px-8 items-center justify-between">
       <div className="flex items-center justify-between">
@@ -15,11 +17,12 @@ const Navbar = () => {
       </div>
       <div className="flex items-center gap-2 w-[30%]">
         <input
+          onChange={e => handleSearchInputChange(e.target.value)}
           placeholder="Search"
           type="text"
           className="text-zinc-400 rounded-full bg-darkbg border border-zinc-700 focus:outline-none focus:border-red-900 px-4 py-1 w-[90%]"
         />
-        <button className="text-white p-2 rounded-full bg-zinc-700 hover:bg-zinc-600">
+        <button onClick={performSearch} className="text-white p-2 rounded-full bg-zinc-700 hover:bg-zinc-600">
           <FiSearch />
         </button>
       </div>

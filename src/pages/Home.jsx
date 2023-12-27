@@ -1,24 +1,13 @@
-import { useState } from "react";
 import MobileNavbar from "../components/MobileNavbar";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import VideoCard from "../components/VideoCard";
-import { videos } from "../backend/db/videos";
 import { categories } from "../backend/db/categoryChips";
+import { useData } from "../context/DataContext";
 
 const Home = () => {
-  const [feedVideos, setFeedVideos] = useState(videos);
-
-  const categoryFilter = (category) => {
-    if (category === "All") {
-      setFeedVideos(videos);
-    } else {
-      const filteredVideos = videos.filter(
-        (video) => video.category === category
-      );
-      setFeedVideos(filteredVideos);
-    }
-  };
+  const {searchInput, filteredByCategory, feedVideos} = useData()
+  
   return (
     <>
       <nav className="sticky top-0">
@@ -37,7 +26,7 @@ const Home = () => {
               <button key={category}
                 value={category}
                 onClick={(e) => {
-                  categoryFilter(e.target.value);
+                  filteredByCategory(e.target.value);
                 }}
                 className="focus:bg-red-700 px-4 py-2 m-2 rounded-full cursor-pointer bg-zinc-800 hover:bg-zinc-700"
               >

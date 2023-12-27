@@ -9,7 +9,7 @@ import { useData } from "../context/DataContext";
 
 const MobileNavbar = () => {
   const [searchOn, setSearchOn] = useState(false);
-  const { toggleSidebar } = useData();
+  const { toggleSidebar, handleSearchInputChange, performSearch } = useData();
   const handleSearchBar = () => {
     setSearchOn(true);
   };
@@ -28,12 +28,12 @@ const MobileNavbar = () => {
             <IoChevronBack />
           </button>
           <input
-            onChange={() => {}}
+            onChange={e => handleSearchInputChange(e.target.value)}
             placeholder="Search"
             type="text"
             className="text-zinc-400 rounded-full bg-darkbg border border-zinc-700 focus:outline-none focus:border-red-900 px-4"
           />
-          <button className="text-white p-2 rounded-full hover:bg-zinc-700">
+          <button onClick={performSearch} className="text-white p-2 rounded-full hover:bg-zinc-700">
             <FiSearch />
           </button>
         </div>

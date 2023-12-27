@@ -42,7 +42,7 @@ const History = () => {
                     payload: [],
                   });
                 }}
-                className="w-fit px-4 py-2 rounded-lg bg-red-700 hover:bg-red-800 bg-opacity-50"
+                className="w-fit px-4 py-2 rounded-lg bg-zinc-700 hover:bg-red-700 hover:bg-opacity-50"
               >
                 Clear History
               </button>
