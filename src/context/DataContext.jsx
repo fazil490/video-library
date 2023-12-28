@@ -41,6 +41,9 @@ const DataProvider = ({ children }) => {
           .includes(searchInput.toLocaleLowerCase()) ||
         video.description
           .toLocaleLowerCase()
+          .includes(searchInput.toLocaleLowerCase()) ||
+        video.category
+          .toLocaleLowerCase()
           .includes(searchInput.toLocaleLowerCase())
     );
     setFeedVideos(fileteredVideosBySearch);

@@ -6,8 +6,8 @@ import { categories } from "../backend/db/categoryChips";
 import { useData } from "../context/DataContext";
 
 const Home = () => {
-  const {searchInput, filteredByCategory, feedVideos} = useData()
-  
+  const { searchInput, filteredByCategory, feedVideos } = useData();
+
   return (
     <>
       <nav className="sticky top-0">
@@ -23,7 +23,8 @@ const Home = () => {
         <div className="lg:ml-64">
           <div className="categories p-2 lg:px-0 flex overflow-auto items-center justify-start">
             {categories.map((category) => (
-              <button key={category}
+              <button
+                key={category}
                 value={category}
                 onClick={(e) => {
                   filteredByCategory(e.target.value);
